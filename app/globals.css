@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 160 20% 5%;
+    --foreground: 0 0% 98%;
+    --card: 160 20% 7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 160 20% 7%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 70% 45%;
+    --primary-foreground: 144 70% 10%;
+    --secondary: 160 20% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 160 20% 12%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 142 70% 45%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 160 20% 12%;
+    --input: 160 20% 12%;
+    --ring: 142 70% 45%;
+    --radius: 1rem;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(to right, hsl(142, 70%, 45%), hsl(160, 84%, 39%));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gradient-bg {
+  background: radial-gradient(circle at top right, 
+    hsl(142, 70%, 45%, 0.1),
+    hsl(160, 84%, 39%, 0.05),
+    transparent 50%);
+}
+
+.card-hover {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: var(--radius);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -10px hsl(142, 70%, 45%, 0.2);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
